@@ -17,7 +17,7 @@ namespace WeatherAppp.Services
         {
             _httpClient = new HttpClient();
         }
-
+        // method to get weather by coordinates
         public async Task<WeatherModel.WeatherResponse> GetWeatherByCoordinates(double latitude, double longitude)
         {
            // latitude = -23.883669;
@@ -34,7 +34,7 @@ namespace WeatherAppp.Services
 
             throw new Exception("Failed to get weather data");
         }
-
+        // grtting weather by city
         public async Task<WeatherModel.WeatherResponse> GetWeatherByCity(string city)
         {
             var response = await _httpClient.GetAsync(

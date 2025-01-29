@@ -23,6 +23,7 @@ namespace WeatherAppp
             BindingContext = this;
         }
 
+        // getting current location
         private async Task GetCurrentLocation()
         {
             try
@@ -46,6 +47,7 @@ namespace WeatherAppp
             }
         }
 
+        // method to search a city
         private async Task SearchCity(string city)
         {
             if (string.IsNullOrWhiteSpace(city))
@@ -62,6 +64,8 @@ namespace WeatherAppp
             }
         }
 
+
+        // updating the labels
         private void UpdateUI(WeatherModel.WeatherResponse weather)
         {
             CityLabel.Text = weather.Name;
